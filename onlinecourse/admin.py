@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Course, Lesson, Instructor, Learner, Question, Choice, Submission
+from .models import (
+    Course,
+    Lesson,
+    Instructor,
+    Learner,
+    Question,
+    Choice,
+    Submission,
+)
 
 
 class LessonInline(admin.StackedInline):
@@ -26,7 +34,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
-    list_display = ["content"]
+    list_display = ["question_text"]
 
 
 class LessonAdmin(admin.ModelAdmin):
